@@ -16,21 +16,16 @@ st.write('Simulate a full shopping flow by generating a cart and proceeding to c
 if 'cart' not in st.session_state:
     st.session_state.cart = None
 
-col1, col2 = st.columns([0.4, 0.6])
+btn_clicked = st.button('🎲 Generate Random Cart')
 
-with col1:
-    if st.button('🎲 Generate Random Cart'):
-        r = requests.get(f'{DUMMY_CART_URL}/{random.randint(1, 50)}')
-        if r.status_code == 200:
-            st.session_state.cart = r.json()
-            st.success('Cart loaded successfully!')
-            st.info('➡️ Go to **🛒 Shopping Cart** from the sidebar to continue.')
-        else:
-            st.error('Failed to load cart. Please try again.')
-
-with col2:
-    if st.session_state.cart:
-        st.success('Cart is ready.')
-        st.info('✅ You can now navigate to **🛒 Shopping Cart** from the sidebar.')
+if btn_clicked:
+    r = requests.get(f'{DUMMY_CART_URL}/{random.randint(1, 50)}')
+    if r.ok:
+        st.session_state.cart = r.json()
+        st.success('✅ Cart loaded and ready.')
+        st.info('➡️ Go to **🛒 Shopping Cart** from the sidebar to continue.')
     else:
-        st.warning('No cart loaded yet. Please generate one.')
+        st.error('❌ Failed to load cart. Please try again.')
+
+if not btn_clicked and not st.session_state.cart:
+    st.warning('No cart loaded yet. Please generate one.')
