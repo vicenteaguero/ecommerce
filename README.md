@@ -28,15 +28,15 @@ Simulador interactivo de compras que combina un frontend visual en Streamlit con
 
 ### 1. Requisitos
 
-- Python 3.10+ o Docker
-- `poetry` (opcional para entorno virtual)
+* Python 3.10+
+* [`poetry`](https://python-poetry.org/docs/#installation)
 
 ### 2. Clonar el repositorio
 
 ```bash
 git clone https://github.com/tuusuario/ecommerce-simulator.git
 cd ecommerce-simulator
-````
+```
 
 ### 3. Crear archivo `.env`
 
@@ -47,6 +47,34 @@ UDER_API_KEY=your_real_key
 ```
 
 (O puedes dejar los valores por defecto `demo-traelo` y `demo-uder` para pruebas.)
+
+### 4. Instalar dependencias
+
+```bash
+poetry install --no-dev
+```
+
+> Si usas entorno virtual administrado por Poetry, puedes activarlo con:
+>
+> ```bash
+> poetry shell
+> ```
+
+### 5. Ejecutar el backend (API)
+
+```bash
+poetry run uvicorn api.main:app --reload
+```
+
+Esto iniciará el backend en: [http://localhost:8000](http://localhost:8000)
+
+### 6. Ejecutar el frontend (Streamlit)
+
+```bash
+poetry run streamlit run app/app.py
+```
+
+Esto abrirá la app en: [http://localhost:8501](http://localhost:8501)
 
 ---
 
