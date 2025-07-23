@@ -58,3 +58,4 @@ with open(PATHS['about']) as f:
 # API URLs
 
 API_CART_URL = f'{API_URL}/api/cart'
+DUMMY_CART_URL = 'https://dummyjson.com/carts/'
