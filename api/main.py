@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 
-from api.endpoints import cart
+from api.src.endpoints import router
 
 app = FastAPI()
-app.include_router(cart.router, prefix='/api/cart')
+app.include_router(router, prefix='/api/cart')
