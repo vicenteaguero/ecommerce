@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   api:
     build:
@@ -15,7 +13,7 @@ services:
       context: .
       dockerfile: app/Dockerfile
     environment:
-      - API_CART_URL=http://api:8000/api/cart
+      - API_URL=http://api:8000/api/cart
     ports:
       - "8501:8501"
     depends_on:
