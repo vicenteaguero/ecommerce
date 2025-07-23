@@ -22,7 +22,7 @@ GITHUB_URL = 'https://github.com/vicenteaguero/ecommerce'
 REPORT_URL_MAIL = 'mailto:vicenteaguero@uc.cl'
 
 # API URL
-API_URL = 'http://localhost:8000/api/cart'
+API_URL = os.getenv('API_URL', 'http://localhost:8000')
 
 ################################################################################
 
