@@ -10,20 +10,20 @@ st.title('Flapp Simulator – Documentation')
 st.markdown('## 🎮 How to use the web app')
 
 st.markdown("""
-1. **Home**  
-   • Click **🎲 Generate Random Cart** to pull a sample cart from DummyJSON.  
+1. **Home**
+   • Click **🎲 Generate Random Cart** to pull a sample cart from DummyJSON.
    • When loaded, navigate to **🛒 Shopping Cart** from the sidebar.
 
-2. **Shopping Cart**  
-   • Review items and totals.  
-   • Fill **Name, Street, Commune, Phone** in the left‑hand form.  
-   • Click **📦 Quote Shipping** to retrieve real‑time courier prices.  
-   • Lowest quote is displayed → _“Shipping with TraeloYa – $5 990”_.  
+2. **Shopping Cart**
+   • Review items and totals.
+   • Fill **Name, Street, Commune, Phone** in the left‑hand form.
+   • Click **📦 Quote Shipping** to retrieve real‑time courier prices.
+   • Lowest quote is displayed → _“Shipping with TraeloYa – $5 990”_.
    • **🧹 Clear Cart** resets everything; **↩️ Back** returns to Home.
 
-3. **State management**  
-   • Cart is stored in `st.session_state.cart`.  
-   • Shipping data persists in `st.session_state.shipping`.  
+3. **State management**
+   • Cart is stored in `st.session_state.cart`.
+   • Shipping data persists in `st.session_state.shipping`.
    • Clearing the cart wipes both keys.
 """)
 
@@ -77,7 +77,8 @@ st.markdown("""
 | TraeloYa | https://recruitment.weflapp.com/tarifier/traelo_ya | `X-Api-Key: $TRAELOYA_API_KEY` |
 | Uder | https://recruitment.weflapp.com/tarifier/uder | `X-Api-Key: $UDER_API_KEY` |
 
-The backend requests both couriers in parallel, picks the cheapest quote, and returns it to the frontend.
+The backend requests both couriers in parallel,
+picks the cheapest quote, and returns it to the frontend.
 """)
 
 st.markdown('### Quick local test (cURL)')
@@ -90,7 +91,7 @@ curl -X POST http://localhost:8000/api/cart \
 """, language='bash')
 
 st.markdown("""
-> **Nota:** para que este request funcione con los couriers reales debes definir  
+> **Nota:** para que este request funcione con los couriers reales debes definir
 > `TRAELOYA_API_KEY` y `UDER_API_KEY` en tu archivo **`etc/.env`**:
 >
 > ```env

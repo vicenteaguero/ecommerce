@@ -5,6 +5,7 @@ import streamlit as st
 from src.params import PATHS, GITHUB_URL, REPORT_URL_MAIL, ABOUT_TEXT
 
 def setup_layout(page_title: str):
+    """Set up the Streamlit layout with custom configurations."""
     st.set_page_config(
         layout='wide',
         page_title=page_title,
@@ -43,6 +44,7 @@ def setup_layout(page_title: str):
     """, unsafe_allow_html=True)
 
 def setup_pages():
+    """Set up the navigation pages for the Streamlit app."""
     pages = {
         'General': [
             st.Page(page=PATHS['pages']['home'], title='Home', icon='🏠'),

@@ -4,10 +4,12 @@ from pydantic import BaseModel, ConfigDict, PositiveInt, PositiveFloat, condecim
 
 class Schema(BaseModel):
     """Base schema with config for alias support (camelCase)."""
+
     model_config = ConfigDict(populate_by_name=True)
 
 class ProductIn(Schema):
     """Product input for shipping request."""
+
     product_id: PositiveInt = Field(..., alias='productId')
     price: condecimal(gt=0)
     quantity: PositiveInt
@@ -15,6 +17,7 @@ class ProductIn(Schema):
 
 class CustomerData(Schema):
     """Customer shipping address and contact information."""
+
     name: constr(min_length=3)
     shipping_street: str
     commune: str
@@ -22,10 +25,12 @@ class CustomerData(Schema):
 
 class CartRequest(Schema):
     """Request structure for creating a shipping quote."""
+
     products: list[ProductIn]
     customer_data: CustomerData
 
 class QuoteOut(Schema):
     """Minimal courier response with the best quote."""
+
     courier: str
     price: PositiveFloat
