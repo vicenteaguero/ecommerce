@@ -11,8 +11,8 @@ def render_shipping():
     _render_actions()
 
 def _render_form():
+    st.session_state.setdefault('shipping', {})
     shipping = st.session_state.shipping or {}
-
     st.session_state.shipping = {
         'name': st.text_input('Name', value=shipping.get('name', '')),
         'shipping_street': st.text_input('Street', value=shipping.get('shipping_street', '')),
@@ -25,7 +25,7 @@ def _render_actions():
         data = {
             'products': [
                 {
-                    'productId': p['id'],
+                    'product_id': p['id'],
                     'price': p['price'],
                     'quantity': p['quantity'],
                     'discount': p['discountPercentage'],
