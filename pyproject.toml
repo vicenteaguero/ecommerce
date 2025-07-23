@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "ecommerce"
+version = "0.0.1"
+description = "[ ADD STREAMLIT LINK ]"
+authors = [
+    "Vicente Agüero <vicenteaguero>",
+]
+readme = "README.md"
+packages = [
+    { include = "api", from = "." },
+    { include = "app", from = "." },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.116.1"
+uvicorn = "^0.35.0"
+streamlit = "^1.47.0"
+httpx = "^0.28.1"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+ruff = "^0.11.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
