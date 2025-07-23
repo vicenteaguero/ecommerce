@@ -30,15 +30,23 @@ def _render_table(cart: dict):
 
 def _render_summary(cart: dict):
     st.markdown(f"""
-        <div style="margin-top: 1.5rem; padding: 1rem 1.5rem; border: 1px solid #ddd;
-                    border-radius: 10px; background-color: #f9f9f9;">
-            <h4 style="margin-bottom: 0.75rem;">🧮 <u>Cart Summary Details</u></h4>
+        <div style="
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid #0056b8;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+        ">
+            <h4 style="margin-bottom: 0.75rem; color: #0056b8;">
+                🧮 Cart Summary Details
+            </h4>
             <ul style="list-style: none; padding-left: 0; font-size: 15px; line-height: 1.6;">
                 <li>🛍 <strong>Total Products:</strong> {cart["totalProducts"]}</li>
                 <li>🔢 <strong>Total Quantity:</strong> {cart["totalQuantity"]}</li>
                 <li>💰 <strong>Original Total:</strong> ${cart["total"]:.2f}</li>
                 <li>💸 <strong>Discounted Total:</strong>
-                    <span style="color: #009e60; font-weight: bold;">
+                    <span style="color: #0056b8; font-weight: bold;">
                         ${cart["discountedTotal"]:.2f}
                     </span>
                 </li>
